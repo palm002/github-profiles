@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import SearchBar from './SearchBar';
+import PageView from './PageView';
 
 
 class App extends React.Component {
@@ -18,7 +19,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <SearchBar onSubmit={this.onSearchSubmit} />
-        {/* <RepoList /> */}
+        <PageView user={this.state.user} />
       </div>
     );
   }
