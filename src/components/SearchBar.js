@@ -14,8 +14,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      // TODO: center the searchbar below
-      <div className=""> 
+      <div className="" style={{ textAlign: `center` }}>
         <form className="" onSubmit={this.onFormSubmit}>
           <input
             type="text"
