@@ -5,26 +5,26 @@ class SearchBar extends React.Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    console.log('STATE: ', this.state.user)
 
     this.props.onSubmit(this.state.user);
 
     // set search back to blank upon submit
-    this.setState({ user: '' })
+    this.setState({ user: '' });
   };
 
   render() {
     return (
-      <form className="" onSubmit={this.onFormSubmit}>
-        <div className="">
+      // TODO: center the searchbar below
+      <div className=""> 
+        <form className="" onSubmit={this.onFormSubmit}>
           <input
             type="text"
-            placeholder='Search User'
+            placeholder="Search User"
             value={this.state.user}
             onChange={e => this.setState({ user: e.target.value })}
           />
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
