@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserInfo = props => {
+    console.log(props.user)
   const { avatar_url, login, followers, public_repos } = props.user;
 
   return (
