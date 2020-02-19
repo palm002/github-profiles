@@ -5,7 +5,7 @@ const UserInfo = props => {
 
   //   TODO: styling
   return (
-    <div className="">
+    <div className="" style={{ textAlign: `center` }}>
       <img style={{ height: `250px` }} src={avatar_url} alt="" />
       <h6>{login}</h6>
       <p>{followers && <> {followers} Followers </>}</p>
