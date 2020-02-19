@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+import Header from './Header';
 import SearchBar from './SearchBar';
 import PageView from './PageView';
 
@@ -34,16 +35,25 @@ class App extends React.Component {
           console.log(error.response);
         } else {
           // other error -- in the setting up the request
-          console.log(error.message)
+          console.log(error.message);
         }
       });
   };
-
+// style={{padding: `5em`, backgroundColor: `tomato` }} STYLE TOP DIV
   render() {
     return (
-      <div className="container-fluid">
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <PageView user={this.state.user} repos={this.state.repos} />
+      <div className="container-fluid" >
+        <div className="row">
+          <div className="col-md-12">
+            <Header />
+          </div>
+          <div className="col-md-12">
+            <SearchBar onSubmit={this.onSearchSubmit} />
+          </div>
+          <div className="col-md-12">
+            <PageView user={this.state.user} repos={this.state.repos} />
+          </div>
+        </div>
       </div>
     );
   }
