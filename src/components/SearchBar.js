@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
             <input
               className="form-control"
               type="text"
-              placeholder="Search User"
+              placeholder="Search GitHub User"
               value={this.state.user}
               onChange={e => this.setState({ user: e.target.value })}
             />

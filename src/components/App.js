@@ -16,11 +16,10 @@ class App extends React.Component {
       ])
       .then(
         axios.spread((userRes, repoRes) => {
-          // completed requests
-          // TODO: confirm if this is the correct way to do things or outside of promises
+          // set state on completed requests
           this.setState({ user: userRes.data, repos: repoRes.data });
         })
-      )
+      ) //TODO: handle errors gracefully, test , dockerise, serve
       .catch(error => {
         // catch & handle error here
         console.log(error);
@@ -39,18 +38,24 @@ class App extends React.Component {
         }
       });
   };
-// style={{padding: `5em`, backgroundColor: `tomato` }} STYLE TOP DIV
+
   render() {
     return (
-      <div className="container-fluid" >
+      <div
+        className="container-fluid"
+        style={{
+          backgroundColor: `tomato`,
+          minHeight: `100vh`
+        }}
+      >
         <div className="row">
           <div className="col-md-12">
             <Header />
           </div>
-          <div className="col-md-12">
+          <div className="mx-auto col-sm-3 col-md-3">
             <SearchBar onSubmit={this.onSearchSubmit} />
           </div>
-          <div className="col-md-12">
+          <div className="col-sm-12 col-md-12">
             <PageView user={this.state.user} repos={this.state.repos} />
           </div>
         </div>
