@@ -14,14 +14,15 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="" style={{ textAlign: `center` }}>
-        <form className="" onSubmit={this.onFormSubmit}>
-          <input
-            type="text"
-            placeholder="Search User"
-            value={this.state.user}
-            onChange={e => this.setState({ user: e.target.value })}
-          />
+      <div className="search-bar" >
+        <form onSubmit={this.onFormSubmit}>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Search User"
+              value={this.state.user}
+              onChange={e => this.setState({ user: e.target.value })}
+            />
         </form>
       </div>
     );
