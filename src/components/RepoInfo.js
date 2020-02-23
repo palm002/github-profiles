@@ -8,7 +8,6 @@ const RepoInfo = props => {
   // if there is 0 stars and forks, get top 4 repos alphabetically
   const repos = props.repos;
 
-
   const renderTopFourRepos = sortTopFourRepos(repos).map(repo => {
     return (
       <div
