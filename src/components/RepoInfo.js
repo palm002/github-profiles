@@ -1,13 +1,12 @@
 import React from 'react';
 
 const RepoInfo = props => {
-  // TODO: add styling
+  // TODO: handle user with 0 repos
 
   // get the list, iterate over it, do calculations and sort by highest num.
   // if there is 0 stars and forks, get top 4 repos alphabetically
-  const repositories = props.repos;
-
-  const renderTopFourRepos = data => {
+  const repos = props.repos;
+  const sortTopFourRepos = data => {
     const sortedData = [...data].sort(
       (a, b) =>
         b.forks_count +
@@ -17,28 +16,32 @@ const RepoInfo = props => {
     return sortedData.slice(0, 4);
   };
 
-  const repos = renderTopFourRepos(repositories).map(repo => {
+  const renderTopFourRepos = sortTopFourRepos(repos).map(repo => {
     return (
-      <div className="" key={repo.id}>
-        <h6 className="" style={{ textAlign: `center` }}>{repo.name}</h6>
-        <p className="">{repo.description}</p>
-        <div className="row" >
-          <div className="col-md-6">
+      <div
+        className="rounded-lg border border-dark shadow-sm col-sm-4 col-md-6"
+        key={repo.id}
+        style={{ backgroundColor: '#E0D0C1' }}
+      >
+        <h6 className="pt-2">{<a href={repo.html_url}>{repo.full_name}</a>}</h6>
+        <div className="row justify-content-center">
+          <div className="col-md-3">
             <ion-icon name="git-branch-outline"></ion-icon>
             <p className="">{repo.forks_count}</p>
           </div>
-          <div className="col-md-6">
+          <div className="col-sm-3 col-md-3">
             <ion-icon name="star"></ion-icon>
             <p className="">{repo.stargazers_count}</p>
           </div>
         </div>
+        <p className="">{repo.description || <> (no description) </>}</p>
       </div>
     );
   });
 
   return (
-    <div className="" style={{ textAlign: `left` }}>
-      {repos}
+    <div className="row justify-content-center" style={{ textAlign: `center` }}>
+      {renderTopFourRepos}
     </div>
   );
 };
