@@ -1,4 +1,5 @@
 import React from 'react';
+import { sortTopFourRepos } from '../util/sortTopFourRepos';
 
 const RepoInfo = props => {
   // TODO: handle user with 0 repos
@@ -6,15 +7,7 @@ const RepoInfo = props => {
   // get the list, iterate over it, do calculations and sort by highest num.
   // if there is 0 stars and forks, get top 4 repos alphabetically
   const repos = props.repos;
-  const sortTopFourRepos = data => {
-    const sortedData = [...data].sort(
-      (a, b) =>
-        b.forks_count +
-        b.stargazers_count -
-        (a.forks_count + a.stargazers_count)
-    );
-    return sortedData.slice(0, 4);
-  };
+
 
   const renderTopFourRepos = sortTopFourRepos(repos).map(repo => {
     return (
@@ -23,7 +16,8 @@ const RepoInfo = props => {
         key={repo.id}
         style={{ backgroundColor: '#E0D0C1' }}
       >
-        <h6 className="pt-2">{<a href={repo.html_url}>{repo.full_name}</a>}</h6>
+        <h6 className="pt-2">{<a href={repo.html_url} target="_blank"
+          rel="noopener noreferrer">{repo.full_name}</a>}</h6>
         <div className="row justify-content-center">
           <div className="col-md-3">
             <ion-icon name="git-branch-outline"></ion-icon>
