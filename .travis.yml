@@ -15,7 +15,7 @@ script:
 
 # push to docker hub, login to docker cli w/ travis, push built images to docker hub
 after_success:
-  - docker build -t mirks/gh-profiles:latest -t mirks/gh-profiles:$SHA ./client
+  - docker build -t mirks/gh-profiles:latest -t mirks/gh-profiles:$SHA .
   #  docker login
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push mirks/gh-profiles:latest
