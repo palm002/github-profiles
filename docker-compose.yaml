@@ -1,0 +1,18 @@
+version: '3'
+services:
+  dev:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    ports:
+      - 3000:3000
+    volumes: 
+      - ./src:/app/src
+  test:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    environment: 
+      - CI=true
+    command: yarn test
+  
