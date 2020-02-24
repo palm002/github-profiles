@@ -15,6 +15,7 @@ Alternatively, you can run the finished build with docker:
 
 You can access the static content on `localhost:8080`
 
+
 ## Developing and testing with Docker Compose
 
 Clone the repo `git clone https://github.com/palm002/github-profiles.git`
@@ -27,3 +28,8 @@ and navigate into it `cd github-profiles`
 Run `docker-compose up --build dev` builds only the dev service while 
 
 `docker-compose up --build test` runs the tests.
+
+
+## Demo
+
+https://musing-lumiere-7023c7.netlify.com/
