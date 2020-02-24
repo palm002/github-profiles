@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 import Header from './Header';
 import SearchBar from './SearchBar';
@@ -19,22 +20,28 @@ class App extends React.Component {
           // set state on completed requests
           this.setState({ user: userRes.data, repos: repoRes.data });
         })
-      ) //TODO: handle errors gracefully, test , dockerise, serve
+      )
       .catch(error => {
-        // catch & handle error here
-        console.log(error);
-
-        if (error.response) {
-          // show friendly msg to user
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          // this block is for when there is no response coming back
-          console.log(error.response);
+        if (error.response.status === 404) {
+          Swal.fire({
+            title: 'Oops!',
+            text: `User ${user} does not exist`,
+            icon: 'error'
+          });
+        } else if (error.response.status === 403) {
+          // when there is no response coming back
+          Swal.fire({
+            title: 'Oh no!',
+            text: `${error.response.data.message}`,
+            icon: 'error'
+          });
         } else {
           // other error -- in the setting up the request
-          console.log(error.message);
+          Swal.fire({
+            title: 'Something went wrong!',
+            text: `${error.message}`,
+            icon: 'error'
+          });
         }
       });
   };

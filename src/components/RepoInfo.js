@@ -15,8 +15,13 @@ const RepoInfo = props => {
         key={repo.id}
         style={{ backgroundColor: '#E0D0C1' }}
       >
-        <h6 className="pt-2">{<a href={repo.html_url} target="_blank"
-          rel="noopener noreferrer">{repo.full_name}</a>}</h6>
+        <h6 className="pt-2">
+          {
+            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+              {repo.full_name}
+            </a>
+          }
+        </h6>
         <div className="row justify-content-center">
           <div className="col-md-3">
             <ion-icon name="git-branch-outline"></ion-icon>
