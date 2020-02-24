@@ -24,10 +24,11 @@ and navigate into it `cd github-profiles`
 
 `docker-compose up --build` will start the development server with hot reload and run tests.
 
+---
 
-Run `docker-compose up --build dev` builds only the dev service while 
+`docker-compose up --build dev` builds and runs only the dev service while 
 
-`docker-compose up --build test` runs the tests.
+`docker-compose up --build test` builds and runs the tests.
 
 
 ## Demo
