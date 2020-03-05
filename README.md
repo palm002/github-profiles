@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27f62c2a-1ea2-421c-a900-1318c44dbe40/deploy-status)](https://app.netlify.com/sites/musing-lumiere-7023c7/deploys)
+
+---
+
 ## Running locally
 
 Clone the repo, navigate into it, install dependencies, run tests and start dev server
