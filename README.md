@@ -1,6 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27f62c2a-1ea2-421c-a900-1318c44dbe40/deploy-status)](https://app.netlify.com/sites/musing-lumiere-7023c7/deploys)
 
----
 
 ## Screenshots
 
@@ -34,8 +33,6 @@ Clone the repo `git clone https://github.com/palm002/github-profiles.git`
 and navigate into it `cd github-profiles`
 
 `docker-compose up --build` will start the development server with hot reload and run tests.
-
----
 
 `docker-compose up --build dev` builds and runs only the dev service while 
 
