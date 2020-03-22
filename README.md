@@ -4,9 +4,10 @@
 
 ## Screenshots
 
-<img src="public/ss1.png" alt="screenshot" width="280px"/>
-<br />
-<img src="public/ss2.png" alt="another screenshot" width="280px"/>
+<div>
+    <img src="public/ss1.png" alt="screenshot" width="480px"/>
+    <img src="public/ss2.png" alt="another screenshot" width="480px"/>
+</div>
 
 ## Running locally
 
