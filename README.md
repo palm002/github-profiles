@@ -2,6 +2,12 @@
 
 ---
 
+## Screenshots
+
+<img src="public/ss1.png" alt="screenshot" width="280px"/>
+<br />
+<img src="public/ss2.png" alt="another screenshot" width="280px"/>
+
 ## Running locally
 
 Clone the repo, navigate into it, install dependencies, run tests and start dev server
@@ -33,6 +39,7 @@ and navigate into it `cd github-profiles`
 `docker-compose up --build dev` builds and runs only the dev service while 
 
 `docker-compose up --build test` builds and runs the tests.
+
 
 
 ## Demo
