@@ -2,7 +2,7 @@
 
 ## Overview
 
-A simple react app to which fetches GitHub users and retrieves their top 4 repositories based on stars and forks by calling public GitHub APIs.
+A simple React app which fetches GitHub users and retrieves their top 4 repositories based on stars and forks by calling public GitHub APIs.
 
 ## Screenshots
 
