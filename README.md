@@ -1,5 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27f62c2a-1ea2-421c-a900-1318c44dbe40/deploy-status)](https://app.netlify.com/sites/musing-lumiere-7023c7/deploys)
 
+## Overview
+
+A simple react app to which fetches GitHub users and retrieves their top 4 repositories based on stars and forks by calling public GitHub APIs.
 
 ## Screenshots
 

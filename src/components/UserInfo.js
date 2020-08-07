@@ -4,7 +4,6 @@ const UserInfo = props => {
   const { avatar_url, name, followers, public_repos } = props.user;
 
   // TODO: handle 0 followers and repos
-  
   return (
     <div className="profile">
       <div style={{ textAlign: `center` }}>

@@ -2,10 +2,6 @@ import React from 'react';
 import { sortTopFourRepos } from '../util/sortTopFourRepos';
 
 const RepoInfo = props => {
-  // TODO: handle user with 0 repos
-
-  // get the list, iterate over it, do calculations and sort by highest num.
-  // if there is 0 stars and forks, get top 4 repos alphabetically
   const repos = props.repos;
 
   const renderTopFourRepos = sortTopFourRepos(repos).map(repo => {
@@ -36,7 +32,6 @@ const RepoInfo = props => {
       </div>
     );
   });
-
   return (
     <div className="row justify-content-center" style={{ textAlign: `center` }}>
       {renderTopFourRepos}
